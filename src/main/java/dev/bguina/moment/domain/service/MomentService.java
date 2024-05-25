@@ -9,13 +9,13 @@ import jakarta.enterprise.context.ApplicationScoped;
 @ApplicationScoped
 public class MomentService {
 
-    private final FfmpegMomentCommandBuilder commandBuilder = new FfmpegMomentCommandBuilder();
-
     public CommandLine getTextEffectCommand(
             VideoInfo video,
             TextEffect textEffect,
             String outputPath
     ) {
+        FfmpegMomentCommandBuilder commandBuilder = new FfmpegMomentCommandBuilder();
+
         return commandBuilder
                 .videoInput(video)
                 .addTextEffect(textEffect)
